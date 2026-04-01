@@ -1,5 +1,5 @@
 [general]
-import = ["./alacritty-theme/themes/gruvbox_dark.toml"]
+import = ["./themes/themes/gruvbox_dark.toml"]
 
 [window]
 opacity = 1.0
