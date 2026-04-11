@@ -31,8 +31,16 @@ return {
                 dim_inactive = false,
                 transparent_mode = false,
             })
-            vim.cmd("colorscheme gruvbox")
+            -- vim.cmd("colorscheme gruvbox")
         end,
+    },
+    {
+        "loctvl842/monokai-pro.nvim",
+        config = function()
+            require("monokai-pro").setup({
+                transparent_background = false,
+            })
+        end
     },
 }
 
