@@ -97,4 +97,6 @@ alias ....="cd ../.."
 eval "$(fzf --zsh)"
 eval "$(starship init zsh)"
 
-. "$HOME/.local/bin/env"
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
