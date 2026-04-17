@@ -90,8 +90,7 @@ alias update_kern="sudo mkinitcpio -P && sudo grub-mkconfig -o /boot/grub/grub.c
 alias tmuxkill-ses="tmux kill-session -t"
 alias tmuxa="tmux attach -t"
 alias live='stat / | awk "/Birth/ {print \"Installed:\", \$2, \$3}" && echo "Today: $(date)" && echo "Life: $(( ($(date +%s) - $(stat / | awk "/Birth/ {print \$2, \$3}" | xargs -I{} date -d "{}" +%s)) / 86400 )) days"'
-alias ..="cd .."
-alias ....="cd ../.."
+alias zed="zededitor"
 
 # ----- Shell integrations -----
 eval "$(fzf --zsh)"
