@@ -32,6 +32,10 @@
     "show_whitespaces": "none",
     "multi_cursor_modifier": "cmd_or_ctrl",
     "colorize_brackets": true,
+    "indent_guides": {
+        "enabled": true,
+        "coloring": "indent_aware",
+    },
 
     // ========================================================================
     // PANELS & NAVIGATION
@@ -55,8 +59,8 @@
     "inlay_hints": {
         "enabled": true,
         "show_other_hints": true,
-        "show_parameter_hints": false,
-        "show_type_hints": false,
+        "show_parameter_hints": true,
+        "show_type_hints": true,
         "show_value_hints": true,
     },
 
@@ -80,15 +84,6 @@
     // LANGUAGE-SPECIFIC SETTINGS
     // ========================================================================
     "languages": {
-        "Python": {
-            "formatter": {
-                "external": {
-                    "command": "black",
-                    "arguments": ["-", "--skip-string-normalization"],
-                },
-            },
-            "format_on_save": "on",
-        },
         "Rust": {
             "formatter": {
                 "external": {
@@ -97,6 +92,16 @@
                 },
             },
             "format_on_save": "on",
+        },
+        "Python": {
+            "format_on_save": "on",
+            "formatter": {
+                "external": {
+                    "command": "ruff",
+                    "arguments": ["format", "-"],
+                },
+            },
+            "language_servers": ["pyright", "ruff"],
         },
     },
 
@@ -126,6 +131,22 @@
                         "enable": "always",
                     },
                 },
+            },
+        },
+        "pyright": {
+            "settings": {
+                "python": {
+                    "analysis": {
+                        "typeCheckingMode": "basic", // Можно сменить на "strict" для хардкора
+                        "autoImportCompletions": true,
+                        "diagnosticMode": "workspace",
+                    },
+                },
+            },
+        },
+        "ruff": {
+            "settings": {
+                "args": ["--ignore", "E501"],
             },
         },
     },
