@@ -1,6 +1,3 @@
-scan_timeout = 100
-command_timeout = 500
-
 "$schema" = "https://starship.rs/config-schema.json"
 
 follow_symlinks = false
@@ -120,29 +117,6 @@ require_repo = true
 ignore_timeout = true
 
 
-[os]
-disabled = true
-
-[os.symbols]
-Windows = "󰍲"
-Ubuntu = "󰕈"
-SUSE = ""
-Raspbian = "󰐿"
-Mint = "󰣭"
-Macos = " "
-Manjaro = ""
-Linux = "󰌽"
-Gentoo = "󰣨"
-Fedora = "󰣛"
-Alpine = ""
-Amazon = ""
-Android = ""
-Arch = "󰣇"
-Artix = "󰣇"
-CentOS = ""
-Debian = "󰣚"
-Redhat = "󱄛"
-RedHatEnterprise = "󱄛"
 
 [nodejs]
 symbol = ""
