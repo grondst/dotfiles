@@ -14,6 +14,7 @@
         "show_branch_icon": false,
         "show_user_menu": false,
         "show_user_picture": false,
+        "show_sign_in": false,
     },
     "toolbar": {
         "quick_actions": false,
@@ -78,6 +79,8 @@
         "dependi": true,
         "graphql": true,
         "git-firefly": true,
+        "python-lsp": true,
+        "justfile": true,
     },
 
     // ========================================================================
