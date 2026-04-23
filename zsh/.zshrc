@@ -78,13 +78,10 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # ----- Aliases -----
-alias cls='clear'
 alias ls="eza --long --header --color=always --icons=always --git"
 alias la="eza --long --header --all --color=always --icons=always --git"
 alias tree="eza --tree --level=3 --icons=always"
 alias ff="fastfetch"
-alias g="git"
-alias gcom="g commit -m"
 alias degradation_battery="echo \"Battery health: \$(echo \"(1 - \$(upower -i \$(upower -e | grep BAT) | awk '/energy-full:/ {ef=\$2} /energy-full-design:/ {efd=\$2} END {print ef/efd}')) * 100 + 0.5\" | bc | cut -d'.' -f1)%\""
 alias update_kern="sudo mkinitcpio -P && sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias tmuxkill-ses="tmux kill-session -t"
