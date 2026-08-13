@@ -1,0 +1,676 @@
+{
+  // ============================================================
+  // EDITOR
+  // ============================================================
+
+  "cli_default_open_behavior": "existing_window",
+
+  "tab_size": 2,
+  "hard_tabs": false,
+  "preferred_line_length": 100,
+  "soft_wrap": "preferred_line_length",
+
+  "format_on_save": "on",
+
+  "show_completions_on_input": true,
+  "show_completion_documentation": true,
+  "show_signature_help_after_edits": true,
+
+  "colorize_brackets": true,
+  "lsp_document_colors": "border",
+  "code_lens": "on",
+
+  "show_edit_predictions": false,
+  "show_whitespaces": "none",
+  "wrap_guides": [79],
+
+  "restore_on_startup": "last_session",
+  "vim_mode": true,
+
+  // ============================================================
+  // MAXIMUM INLAY HINTS
+  // ============================================================
+
+  "inlay_hints": {
+    "enabled": true,
+    "show_parameter_hints": true,
+    "show_type_hints": true,
+    "show_value_hints": true,
+    "show_other_hints": true,
+  },
+
+  // ============================================================
+  // APPEARANCE
+  // ============================================================
+
+  "theme": {
+    "mode": "dark",
+    "light": "Gruvbox Light",
+    "dark": "Gruvbox Dark",
+  },
+
+  "icon_theme": {
+    "mode": "light",
+    "light": "Colored Zed Icons Theme Dark",
+    "dark": "Colored Zed Icons Theme Dark",
+  },
+
+  "ui_font_size": 16,
+  "buffer_font_size": 17,
+
+  "ui_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+
+  "buffer_font_features": {
+    "calt": true,
+  },
+
+  "toolbar": {
+    "breadcrumbs": true,
+    "quick_actions": false,
+    "selections_menu": true,
+    "agent_review": true,
+  },
+
+  "title_bar": {
+    "show_user_menu": false,
+  },
+
+  "project_panel": {
+    "hide_hidden": true,
+    "dock": "right",
+  },
+
+  "gutter": {
+    "min_line_number_digits": 0,
+  },
+
+  // ============================================================
+  // DIAGNOSTICS
+  // ============================================================
+
+  "diagnostics": {
+    "include_warnings": true,
+  },
+
+  "file_scan_exclusions": [
+    "**/.git",
+    "**/target",
+    "**/node_modules",
+    "**/.venv",
+    "**/venv",
+    "**/__pycache__",
+    "**/.terraform",
+  ],
+
+  // ============================================================
+  // GIT
+  // ============================================================
+
+  "git": {
+    "inline_blame": {
+      "enabled": false,
+    },
+  },
+
+  // ============================================================
+  // LANGUAGE SERVERS
+  // ============================================================
+
+  "lsp": {
+    // ----------------------------------------------------------
+    // RUST
+    // ----------------------------------------------------------
+
+    "rust-analyzer": {
+      "initialization_options": {
+        "check": {
+          "command": "clippy",
+        },
+
+        "cargo": {
+          "buildScripts": {
+            "enable": true,
+          },
+        },
+
+        "procMacro": {
+          "enable": true,
+        },
+
+        "inlayHints": {
+          "maxLength": null,
+
+          "lifetimeElisionHints": {
+            "enable": "always",
+            "useParameterNames": true,
+          },
+
+          "closureReturnTypeHints": {
+            "enable": "always",
+          },
+        },
+
+        "rust": {
+          "analyzerTargetDir": true,
+        },
+      },
+    },
+
+    // ----------------------------------------------------------
+    // GO
+    // ----------------------------------------------------------
+
+    "gopls": {
+      "initialization_options": {
+        "staticcheck": true,
+        "usePlaceholders": true,
+
+        "hints": {
+          "assignVariableTypes": true,
+          "compositeLiteralFields": true,
+          "compositeLiteralTypes": true,
+          "constantValues": true,
+          "functionTypeParameters": true,
+          "parameterNames": true,
+          "rangeVariableTypes": true,
+        },
+
+        "codelenses": {
+          "test": true,
+          "generate": true,
+          "regenerate_cgo": true,
+          "tidy": true,
+          "upgrade_dependency": true,
+          "vendor": true,
+        },
+      },
+    },
+
+    // ----------------------------------------------------------
+    // PYTHON
+    //
+    // basedpyright = type checking + inlay hints
+    // ruff        = formatting + linting + import sorting
+    // ----------------------------------------------------------
+
+    "basedpyright": {
+      "settings": {
+        "basedpyright.analysis": {
+          "inlayHints": {
+            "variableTypes": true,
+            "callArgumentNames": true,
+            "callArgumentNamesMatching": true,
+            "functionReturnTypes": true,
+            "genericTypes": true,
+          },
+        },
+      },
+    },
+
+    "ruff": {
+      "settings": {
+        "lineLength": 100,
+      },
+    },
+
+    // ----------------------------------------------------------
+    // TYPESCRIPT / JAVASCRIPT / REACT
+    // ----------------------------------------------------------
+
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "tsserver": {
+            "maxTsServerMemory": 8192,
+          },
+
+          "inlayHints": {
+            "parameterNames": {
+              "enabled": "all",
+              "suppressWhenArgumentMatchesName": false,
+            },
+
+            "parameterTypes": {
+              "enabled": true,
+            },
+
+            "variableTypes": {
+              "enabled": true,
+              "suppressWhenTypeMatchesName": false,
+            },
+
+            "propertyDeclarationTypes": {
+              "enabled": true,
+            },
+
+            "functionLikeReturnTypes": {
+              "enabled": true,
+            },
+
+            "enumMemberValues": {
+              "enabled": true,
+            },
+          },
+        },
+
+        "javascript": {
+          "tsserver": {
+            "maxTsServerMemory": 8192,
+          },
+
+          "inlayHints": {
+            "parameterNames": {
+              "enabled": "all",
+              "suppressWhenArgumentMatchesName": false,
+            },
+
+            "parameterTypes": {
+              "enabled": true,
+            },
+
+            "variableTypes": {
+              "enabled": true,
+              "suppressWhenTypeMatchesName": false,
+            },
+
+            "propertyDeclarationTypes": {
+              "enabled": true,
+            },
+
+            "functionLikeReturnTypes": {
+              "enabled": true,
+            },
+
+            "enumMemberValues": {
+              "enabled": true,
+            },
+          },
+        },
+      },
+    },
+
+    // Fallback if vtsls isn't available.
+    "typescript-language-server": {
+      "initialization_options": {
+        "preferences": {
+          "includeInlayParameterNameHints": "all",
+          "includeInlayParameterNameHintsWhenArgumentMatchesName": true,
+          "includeInlayFunctionParameterTypeHints": true,
+          "includeInlayVariableTypeHints": true,
+          "includeInlayVariableTypeHintsWhenTypeMatchesName": true,
+          "includeInlayPropertyDeclarationTypeHints": true,
+          "includeInlayFunctionLikeReturnTypeHints": true,
+          "includeInlayEnumMemberValueHints": true,
+        },
+      },
+    },
+
+    // ----------------------------------------------------------
+    // TAILWIND
+    // ----------------------------------------------------------
+
+    "tailwindcss-language-server": {
+      "settings": {
+        "classAttributes": ["class", "className", "class:list", "ngClass", "classList"],
+
+        "classFunctions": ["clsx", "cn", "cva", "cx", "tw", "twMerge"],
+
+        "experimental": {
+          "classRegex": [
+            ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*)[\"'`]"],
+            ["cn\\(([^)]*)\\)", "[\"'`]([^\"'`]*)[\"'`]"],
+            ["clsx\\(([^)]*)\\)", "[\"'`]([^\"'`]*)[\"'`]"],
+            ["cx\\(([^)]*)\\)", "[\"'`]([^\"'`]*)[\"'`]"],
+          ],
+        },
+      },
+    },
+
+    // ----------------------------------------------------------
+    // YAML
+    // ----------------------------------------------------------
+
+    "yaml-language-server": {
+      "settings": {
+        "yaml": {
+          "keyOrdering": true,
+
+          "format": {
+            "singleQuote": false,
+          },
+
+          "validate": true,
+          "hover": true,
+          "completion": true,
+        },
+      },
+    },
+
+    // ----------------------------------------------------------
+    // TERRAFORM
+    // ----------------------------------------------------------
+
+    "terraform-ls": {
+      "initialization_options": {
+        "experimentalFeatures": {
+          "prefillRequiredFields": true,
+        },
+      },
+    },
+
+    // ----------------------------------------------------------
+    // C / C++
+    // ----------------------------------------------------------
+
+    "clangd": {
+      "binary": {
+        "arguments": [
+          "--background-index",
+          "--completion-style=detailed",
+          "--header-insertion=iwyu",
+          "--header-insertion-decorators",
+          "--clang-tidy",
+          "--cross-file-rename",
+          "--pch-storage=memory",
+        ],
+      },
+    },
+
+    // ----------------------------------------------------------
+    // TOML
+    // ----------------------------------------------------------
+
+    "tombi": {
+      "settings": {},
+    },
+
+    // ----------------------------------------------------------
+    // SQL
+    //
+    // SQL in Zed currently doesn't have a dedicated LSP-based
+    // inlay-hint configuration comparable to Rust/Go/TS/Python.
+    // Keep global Zed hints enabled.
+    // ----------------------------------------------------------
+  },
+
+  // ============================================================
+  // LANGUAGES
+  // ============================================================
+
+  "languages": {
+    // ----------------------------------------------------------
+    // RUST
+    // ----------------------------------------------------------
+
+    "Rust": {
+      "tab_size": 4,
+      "hard_tabs": false,
+      "preferred_line_length": 100,
+      "format_on_save": "on",
+      "formatter": "language_server",
+
+      "language_servers": ["rust-analyzer"],
+    },
+
+    // ----------------------------------------------------------
+    // GO
+    // ----------------------------------------------------------
+
+    "Go": {
+      "tab_size": 4,
+      "hard_tabs": true,
+      "preferred_line_length": 100,
+      "format_on_save": "on",
+      "formatter": "language_server",
+
+      "language_servers": ["gopls"],
+    },
+
+    // ----------------------------------------------------------
+    // PYTHON
+    // ----------------------------------------------------------
+
+    "Python": {
+      "tab_size": 4,
+      "hard_tabs": false,
+      "preferred_line_length": 100,
+      "format_on_save": "on",
+
+      "formatter": {
+        "language_server": {
+          "name": "ruff",
+        },
+      },
+
+      "code_actions_on_format": {
+        "source.organizeImports.ruff": true,
+      },
+
+      "language_servers": ["basedpyright", "ruff"],
+    },
+
+    // ----------------------------------------------------------
+    // TYPESCRIPT
+    // ----------------------------------------------------------
+
+    "TypeScript": {
+      "tab_size": 2,
+      "hard_tabs": false,
+      "preferred_line_length": 100,
+      "format_on_save": "on",
+
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": ["--stdin-filepath", "{buffer_path}"],
+        },
+      },
+
+      "language_servers": ["vtsls", "!typescript-language-server"],
+    },
+
+    // ----------------------------------------------------------
+    // TSX / REACT
+    // ----------------------------------------------------------
+
+    "TSX": {
+      "tab_size": 2,
+      "hard_tabs": false,
+      "preferred_line_length": 100,
+      "format_on_save": "on",
+
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": ["--stdin-filepath", "{buffer_path}"],
+        },
+      },
+
+      "language_servers": ["vtsls", "!typescript-language-server"],
+    },
+
+    // ----------------------------------------------------------
+    // JAVASCRIPT
+    // ----------------------------------------------------------
+
+    "JavaScript": {
+      "tab_size": 2,
+      "hard_tabs": false,
+      "preferred_line_length": 100,
+      "format_on_save": "on",
+
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": ["--stdin-filepath", "{buffer_path}"],
+        },
+      },
+
+      "language_servers": ["vtsls", "!typescript-language-server"],
+    },
+
+    // ----------------------------------------------------------
+    // CSS / TAILWIND
+    // ----------------------------------------------------------
+
+    "CSS": {
+      "tab_size": 2,
+      "hard_tabs": false,
+      "format_on_save": "on",
+
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": ["--stdin-filepath", "{buffer_path}"],
+        },
+      },
+
+      "language_servers": ["tailwindcss-language-server", "..."],
+    },
+
+    // ----------------------------------------------------------
+    // HTML / REACT
+    // ----------------------------------------------------------
+
+    "HTML": {
+      "tab_size": 2,
+      "hard_tabs": false,
+      "format_on_save": "on",
+
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": ["--stdin-filepath", "{buffer_path}"],
+        },
+      },
+
+      "language_servers": ["vscode-html-language-server", "tailwindcss-language-server", "..."],
+    },
+
+    // ----------------------------------------------------------
+    // YAML
+    // ----------------------------------------------------------
+
+    "YAML": {
+      "tab_size": 2,
+      "hard_tabs": false,
+      "format_on_save": "on",
+
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": ["--stdin-filepath", "{buffer_path}"],
+        },
+      },
+
+      "language_servers": ["yaml-language-server"],
+    },
+
+    // ----------------------------------------------------------
+    // TOML
+    // ----------------------------------------------------------
+
+    "TOML": {
+      "tab_size": 2,
+      "hard_tabs": false,
+      "format_on_save": "on",
+      "formatter": "language_server",
+
+      "language_servers": ["tombi"],
+    },
+
+    // ----------------------------------------------------------
+    // TERRAFORM
+    // ----------------------------------------------------------
+
+    "Terraform": {
+      "tab_size": 2,
+      "hard_tabs": false,
+      "format_on_save": "on",
+      "formatter": "language_server",
+
+      "language_servers": ["terraform-ls"],
+    },
+
+    // ----------------------------------------------------------
+    // C
+    // ----------------------------------------------------------
+
+    "C": {
+      "tab_size": 2,
+      "hard_tabs": false,
+      "preferred_line_length": 100,
+      "format_on_save": "on",
+      "formatter": "language_server",
+
+      "language_servers": ["clangd"],
+    },
+
+    // ----------------------------------------------------------
+    // C++
+    // ----------------------------------------------------------
+
+    "C++": {
+      "tab_size": 2,
+      "hard_tabs": false,
+      "preferred_line_length": 100,
+      "format_on_save": "on",
+      "formatter": "language_server",
+
+      "language_servers": ["clangd"],
+    },
+
+    // ----------------------------------------------------------
+    // SQL
+    // ----------------------------------------------------------
+
+    "SQL": {
+      "tab_size": 2,
+      "hard_tabs": false,
+      "preferred_line_length": 100,
+      "format_on_save": "on",
+
+      "formatter": {
+        "external": {
+          "command": "sql-formatter",
+          "arguments": ["--language", "postgresql"],
+        },
+      },
+    },
+  },
+  // ============================================================
+  // EXTENSIONS
+  // ============================================================
+
+  "auto_install_extensions": {
+    "ansible": true,
+    "colored-zed-icons-theme": true,
+    "csv": true,
+    "dockerfile": true,
+    "emmet": true,
+    "env": true,
+    "git-firefly": true,
+    "html": true,
+    "ini": true,
+    "java": true,
+    "just": true,
+    "latex": true,
+    "lua": true,
+    "make": true,
+    "scss": true,
+    "sql": true,
+    "terraform": true,
+    "toml": true,
+    "xml": true,
+  },
+
+  // ============================================================
+  // PRIVACY
+  // ============================================================
+
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+}
