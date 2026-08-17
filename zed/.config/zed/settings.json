@@ -28,7 +28,7 @@
   "vim_mode": true,
 
   // ============================================================
-  // MAXIMUM INLAY HINTS
+  //  INLAY HINTS
   // ============================================================
 
   "inlay_hints": {
@@ -50,7 +50,7 @@
   },
 
   "icon_theme": {
-    "mode": "light",
+    "mode": "dark",
     "light": "Colored Zed Icons Theme Dark",
     "dark": "Colored Zed Icons Theme Dark",
   },
@@ -189,9 +189,6 @@
 
     // ----------------------------------------------------------
     // PYTHON
-    //
-    // basedpyright = type checking + inlay hints
-    // ruff        = formatting + linting + import sorting
     // ----------------------------------------------------------
 
     "basedpyright": {
@@ -376,22 +373,6 @@
         ],
       },
     },
-
-    // ----------------------------------------------------------
-    // TOML
-    // ----------------------------------------------------------
-
-    "tombi": {
-      "settings": {},
-    },
-
-    // ----------------------------------------------------------
-    // SQL
-    //
-    // SQL in Zed currently doesn't have a dedicated LSP-based
-    // inlay-hint configuration comparable to Rust/Go/TS/Python.
-    // Keep global Zed hints enabled.
-    // ----------------------------------------------------------
   },
 
   // ============================================================
