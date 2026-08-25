@@ -32,13 +32,6 @@ vim.keymap.set("n", "x", '"_x', opts)
 -- Replace the word cursor is on globally
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace word cursor is on globally" })
 
-vim.keymap.set("n", "<leader>tt", "<cmd>botright split | resize 12 | terminal<cr>", {
-    desc = "Open terminal",
-})
-
-vim.keymap.set("t", "<C-x>", "<C-\\><C-n>", {
-    desc = "Exit terminal mode",
-})
 
 -- Executes shell command from in here making file executable
 vim.keymap.set("n", "<leader>X", "<cmd>!chmod +x %<CR>", { silent = true, desc = "makes file executable" })
