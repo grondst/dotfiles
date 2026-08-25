@@ -49,10 +49,18 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-alias ls='eza --icons=always --color=always --group-directories-first --long --git --header --classify --time-style=long-iso'
-alias la='eza --icons=always --color=always --group-directories-first --long --all --git --header --classify --time-style=long-iso'
+alias ls='eza  --color=always --group-directories-first --long --git  --classify --time-style=long-iso'
+alias la='eza  --color=always --group-directories-first --long --all --git  --classify --time-style=long-iso'
 alias obsidian_main_vault='cd /home/grondst/Documents/obsidian_vaults/'
-alias sz="source ~/dotfiles/zsh/.zshrc"
+alias sz="source ~/.dotfiles/zsh/.zshrc"
+
+live() {
+    local install_date=$(stat -c %Y /)
+    local current_date=$(date +%s)
+    local days=$(( (current_date - install_date) / 86400 ))
+    echo "Installed: In $(date -d @$install_date '+%A %d %B of %Y') ($days days ago)"
+}
+
 
 eval "$(starship init zsh)"
 eval "$(fzf --zsh)"
