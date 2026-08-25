@@ -1,5 +1,7 @@
 vim.g.netrw_banner = 0
 
+vim.opt.shortmess:append("I")
+
 vim.opt.termguicolors = true
 vim.opt.number = true
 vim.opt.relativenumber = true
